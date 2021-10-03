@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: #323232;
+}
+
+input,
+label {
+  display: block;
+  outline: none;
+  width: 100%;
+}
+
+a {
+  color: #f2a661;
+}
+
+body {
+  background-image: url(../images/fundodog.jpg);
+  background-size: 70%;
+}
+
+/* form */
+#main-container {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FFF;
+  border-radius: 10px;
+  padding: 25px;
+  border: 3px solid #f2a661
+}
+
+#main-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.full-box {
+  flex: 1 1 100%;
+  position: relative;
+}
+
+.half-box {
+  flex: 1 1 45%;
+  position: relative;
+}
+
+.spacing {
+  margin-right: 2.5%;
+}
+
+label {
+  font-weight: bold;
+  font-size: .8rem;
+}
+
+input {
+  border-bottom: 2px solid #323232;
+  padding: 10px;
+  font-size: .9rem;
+}
+
+input:focus {
+  border-color: #f2a661;
+}
+
+input[type="submit"] {
+  background: #f2a661;
+  height: 50px;
+  padding: 0 0.5rem;
+  margin-top: 2rem;
+  outline: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  border: 1px solid #f2a661;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+
+}
+
+input#submit:hover {
+  background-color: #fff;
+  border: 1px solid #f2a661;
+  color: #f2a661;
+}
+
+main form input[type="submit"]:hover {
+  background: #f2a661;
+}
+
+#agreement {
+  margin-right: 5px;
+}
+
+#agreement,
+#agreement-label {
+  display: inline-block;
+  width: auto;
+}
+
+.error-validation {
+  color: #000;
+  position: absolute;
+  top: 57px;
+  font-size: 12px;
+}
+
+.template {
+  display: none;
+}
+
+input#macho {
+  position: relative;
+  top: 15px;
+}
+
+input#femea {
+  position: relative;
+  top: 15px;
+}
+
+input#disponivel {
+  position: relative;
+  top: 15px;
+}
+
+input#n_disponivel {
+  position: relative;
+  top: 15px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+  position: relative;
+  left: 90px;
+}
+
+p {
+  position: relative;
+  top: 15px;
+}

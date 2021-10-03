@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Help4Pets</title>
+    <link rel="stylesheet" href="/styles/cadastroanimal.css" />
+  </head>
+  <body>
+    <div id="main-container">
+      <h1>Cadastro de animais</h1>
+      <form id="register-form" action="">
+        <div class="half-box spacing">
+          <label for="name">Raça</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Digite a raça"
+            data-required
+            data-min-length="3"
+            data-max-length="16"
+          />
+          <input type="checkbox" id="macho" name="macho" value="macho" />
+          <label for="macho">Macho</label>
+          <input type="checkbox" id="femea" name="femea" value="femea" />
+          <label for="femea">Femea</label>
+        </div>
+
+        <div class="half-box spacing">
+          <label for="number">Idade</label>
+          <input
+            type="text"
+            name="number"
+            id="number"
+            placeholder="Idade"
+            data-equal="text"
+          />
+          <label for="name">Adoção:</label>
+          <input
+            type="checkbox"
+            id="disponivel"
+            name="disponivel"
+            value="disponivel"
+          />
+          <label for="disponivel">Disponivel</label>
+          <input
+            type="checkbox"
+            id="n_disponivel"
+            name="n_disponivel"
+            value="n_disponivel"
+          />
+          <label for="n_disponivel">Não Disponivel</label>
+        </div>
+
+        <p>
+          <label for="descricao_animal">Descrição do animal:</label>
+          <textarea
+            placeholder="Breve descrição..."
+            id="descricao_animal"
+            name="descricao_animal"
+          ></textarea>
+        </p>
+        <h2>Condição médica</h2>
+        <label for="nome">Vacinas:</label>
+        <input type="checkbox" id="vacinado" name="vacinado" value="vacinado" />
+        <label for="vacinado">Vacinado</label>
+        <input
+          type="checkbox"
+          id="n_vacinado"
+          name="n_vacinado"
+          value="n_vacinado"
+        />
+        <label for="n_vacinado">Não Vacinado</label>
+        <label for="nome">Castrado:</label>
+        <input type="checkbox" id="castrado" name="castrado" value="castrado" />
+        <label for="castrado">Castrado</label>
+        <input
+          type="checkbox"
+          id="n_castrado"
+          name="n_castrado"
+          value="n_castrado"
+        />
+        <label for="n_castrado">Não Castrado</label>
+
+        <p>
+          <label for="descricao_medica">Descrição medica do animal:</label>
+          <textarea
+            placeholder="Breve descrição..."
+            id="descricao_medica"
+            name="descricao_medica"
+          ></textarea>
+        </p>
+        <div class="full-box">
+          <input id="submit" type="submit" value="Registrar" />
+        </div>
+      </form>
+    </div>
+    <p class="error-validation template"></p>
+    <script src="cadastro.js"></script>
+  </body>
+</html>
