@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/tabelaanimais.css" />
+    <title>Help4Pets</title>
+  </head>
+
+  <tbody>
+    <table class="content-table">
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>Nome</td>
+          <td>Descrição</td>
+          <td>CNPJ</td>
+
+          <td>Ação</td>
+        </tr>
+      </thead>
+      <% ongs.forEach(ong => { %>
+      <tr>
+        <td><%= ong.id_ong %></td>
+        <td><%= ong.nome %></td>
+        <td><%= ong.descricao %></td>
+        <td><%= ong.cnpj %></td>
+        <td>
+          <input id="submit" type="submit" value="Alterar" />
+          <input id="submit" type="submit" value="Excluir" form="delete-ong" />
+
+          <form
+            method="post"
+            action="/delete-ong/<%= ong.id_ong %>"
+            id="delete-ong"
+          ></form>
+        </td>
+      </tr>
+      <%}) %>
+    </table>
+  </tbody>
+
+  <tbody></tbody>
+</html>

@@ -10,7 +10,7 @@
   <body>
     <div id="main-container">
       <h1>Cadastro de animais</h1>
-      <form id="register-form" action="">
+      <form id="register-form" action="/create-animal" method="POST">
         <div class="half-box spacing">
           <label for="name">Raça</label>
           <input
@@ -22,9 +22,9 @@
             data-min-length="3"
             data-max-length="16"
           />
-          <input type="checkbox" id="macho" name="macho" value="macho" />
+          <input type="radio" id="macho" name="sexo" value="Macho" />
           <label for="macho">Macho</label>
-          <input type="checkbox" id="femea" name="femea" value="femea" />
+          <input type="radio" id="femea" name="sexo" value="Femea" />
           <label for="femea">Femea</label>
         </div>
 
@@ -39,16 +39,16 @@
           />
           <label for="name">Adoção:</label>
           <input
-            type="checkbox"
+            type="radio"
             id="disponivel"
-            name="disponivel"
+            name="est_adocao"
             value="disponivel"
           />
           <label for="disponivel">Disponivel</label>
           <input
-            type="checkbox"
+            type="radio"
             id="n_disponivel"
-            name="n_disponivel"
+            name="est_adocao"
             value="n_disponivel"
           />
           <label for="n_disponivel">Não Disponivel</label>
@@ -64,22 +64,22 @@
         </p>
         <h2>Condição médica</h2>
         <label for="nome">Vacinas:</label>
-        <input type="checkbox" id="vacinado" name="vacinado" value="vacinado" />
+        <input type="radio" id="vacinado" name="vacinado" value="vacinado" />
         <label for="vacinado">Vacinado</label>
         <input
-          type="checkbox"
+          type="radio"
           id="n_vacinado"
-          name="n_vacinado"
+          name="vacinado"
           value="n_vacinado"
         />
         <label for="n_vacinado">Não Vacinado</label>
         <label for="nome">Castrado:</label>
-        <input type="checkbox" id="castrado" name="castrado" value="castrado" />
+        <input type="radio" id="castrado" name="castrado" value="castrado" />
         <label for="castrado">Castrado</label>
         <input
-          type="checkbox"
+          type="radio"
           id="n_castrado"
-          name="n_castrado"
+          name="castrado"
           value="n_castrado"
         />
         <label for="n_castrado">Não Castrado</label>

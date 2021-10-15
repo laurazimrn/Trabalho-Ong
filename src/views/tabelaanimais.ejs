@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/tabelaanimais.css" />
+    <title>Help4Pets</title>
+  </head>
+
+  <tbody>
+    <table class="content-table">
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>Raça</td>
+          <td>Idade aproximada</td>
+          <td>Adoção</td>
+
+          <td>Ação</td>
+        </tr>
+      </thead>
+
+      <% animais.forEach(animal => { %>
+      <tr>
+        <td><%= animal.id_animal %></td>
+        <td><%= animal.especie %></td>
+        <td><%= animal.idade %></td>
+        <td><%= animal['estado_adocao'] %></td>
+        <td>
+          <input id="submit" type="submit" value="Alterar" />
+          <input
+            id="submit"
+            type="submit"
+            value="Excluir"
+            form="delete-animal"
+          />
+
+          <form
+            method="post"
+            action="/delete-animal/<%= animal.id_animal %>"
+            id="delete-animal"
+          ></form>
+        </td>
+      </tr>
+      <%}) %>
+    </table>
+  </tbody>
+
+  <tbody></tbody>
+</html>

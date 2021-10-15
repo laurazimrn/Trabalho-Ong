@@ -2,7 +2,10 @@ const Database = require('../db/config')
 
 module.exports = {
   async create(req, res) {
+    console.log(req.body)
+
     const db = await Database()
+
     const endereco = {
       cidade: req.body.city,
       bairro: req.body.district,
@@ -21,33 +24,13 @@ module.exports = {
     id_endereco = await db.get(`select max(id_endereco) from endereco`)
 
     await db.run(
-      `insert into ong(cnpj, nome, descricao, fk_id_endereco) values("${req.body.cnpj}", "${req.body.name}", "${req.body.description}", ${id_endereco['max(id_endereco)']})`
+      `
+        insert into clinica(telefone, fk_endereco) values("${endereco.telefone}", ${id_endereco['max(id_endereco)']})
+      `
     )
+    console.log('Deve ter cadastrado')
+    db.close()
 
-    await db.close()
-
-    console.log('deve ter criado')
-    console.log(req.body)
     res.redirect('/')
-  },
-
-  async lista(req, res) {
-    const db = await Database()
-
-    const ongs = await db.all(`
-      select * from ong
-    `)
-
-    res.render('tabelaong', { ongs: ongs })
-  },
-
-  async delete(req, res) {
-    const db = await Database()
-
-    OngId = req.params.id
-
-    await db.run(`delete from ong where id_ong = ${OngId}`)
-
-    res.redirect('/lista-ongs')
   }
 }
